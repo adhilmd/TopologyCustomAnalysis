@@ -1,5 +1,5 @@
 
-MetaORF was used to study the averaged enriched peak profile across all protein coding genes or specific set of genes with upstream  and downstream in the genome.
+MetaORF to study the averaged enriched peak profile across all protein coding genes or specific set of genes with upstream  and downstream in the genome.
 
 Required R packages:
 plyr
