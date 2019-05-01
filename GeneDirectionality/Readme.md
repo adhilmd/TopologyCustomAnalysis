@@ -21,6 +21,11 @@ optional arguments:
  
  ![Genearrangement](https://user-images.githubusercontent.com/18418058/57011196-dc19f800-6c00-11e9-8d12-952a97d13fbb.jpeg)
   
-  
+ Hmo1 protein peak base percentage in the annotated groups (GSE16258)
+ 
+ 
+ Top2 protein peak base percentage in the annotated groups (GSE16258)
+ 
+ 
   
 
