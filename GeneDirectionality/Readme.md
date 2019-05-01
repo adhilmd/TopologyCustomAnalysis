@@ -1,3 +1,5 @@
+Gene Pairs Directionality Analysis
+
 This tool annotate the intergenic spaces of the whole genome based on the upstream and downstream gene directionality into convergent, divergent and codirectional± groups. Then calculate the base percentage of given bed file for the annotated intergenic space groups. 
 
 Code: genedirectionality.R 
