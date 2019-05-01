@@ -8,7 +8,7 @@ Required R libraries:
 
 argparse, bedr, ggplot2
 
-optional arguments:
+Arguments:
   -h, --help  show this help message and exit
   -sc SC      bed file containing gene information with strand information, third column is strand information, if not provided then -dc should be provided
   -dc DC      Directionality annotated file, if not provided then -sc should be provided
