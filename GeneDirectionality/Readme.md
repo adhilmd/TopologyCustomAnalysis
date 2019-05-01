@@ -17,7 +17,9 @@ optional arguments:
   -pr PR      Prefix tag for output file (Mandatory)
   -dir DIR    Output directory path (Mandatory)
   
-  
+ Intergenic spaces of the whole genome based on the gene directionality in yeast (saccer2011)
+ 
+ ![Genearrangement](https://user-images.githubusercontent.com/18418058/57011196-dc19f800-6c00-11e9-8d12-952a97d13fbb.jpeg)
   
   
   
