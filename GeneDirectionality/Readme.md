@@ -9,13 +9,7 @@ Required R libraries:
 argparse, bedr, ggplot2
 
 Arguments:
-  -h, --help  show this help message and exit
-  -sc SC      bed file containing gene information with strand information, third column is strand information, if not provided then -dc should be provided
-  -dc DC      Directionality annotated file, if not provided then -sc should be provided
-  -bc BC      comma seperated bed sample file path
-  -sn SN      sample name comma seperated for tag
-  -pr PR      Prefix tag for output file (Mandatory)
-  -dir DIR    Output directory path (Mandatory)
+  -h, --help  show this help message and exit, -sc SC bed file containing gene information with strand information, third column is strand information, if not provided then -dc should be provided, -dc DC Directionality annotated file, if not provided then -sc should be provided, -bc BC comma seperated bed sample file path (Mandatory), -sn SN sample name comma seperated for tag (Mandatory), -pr PR  Prefix tag for output file (Mandatory), -dir DIR Output directory path (Mandatory)
   
  Intergenic spaces of the whole genome based on the gene directionality in yeast (saccer2011)
  
