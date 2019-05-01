@@ -1,0 +1,13 @@
+DistanceGroup	collision	collisiontype	Count	TotalGenes	perc
+1000	codirectional1000	codirectional	144	347	41
+1000	headon1000	headon	203	347	59
+10000	codirectional10000	codirectional	925	1857	50
+10000	headon10000	headon	932	1857	50
+2000	codirectional2000	codirectional	235	534	44
+2000	headon2000	headon	299	534	56
+250	codirectional250	codirectional	37	140	26
+250	headon250	headon	103	140	74
+500	codirectional500	codirectional	79	235	34
+500	headon500	headon	156	235	66
+5000	codirectional5000	codirectional	525	1088	48
+5000	headon5000	headon	563	1088	52
