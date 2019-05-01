@@ -6,9 +6,7 @@ Code: genedirectionality.R
 
 Required R libraries:
 
-argparse
-bedr
-ggplot2
+argparse, bedr, ggplot2
 
 optional arguments:
   -h, --help  show this help message and exit
