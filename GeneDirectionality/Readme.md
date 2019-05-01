@@ -23,6 +23,7 @@ optional arguments:
   
  Hmo1 protein peak base percentage in the annotated groups (GSE16258)
  
+ ![Hmo1_directionalityIntergenicspaces](https://user-images.githubusercontent.com/18418058/57011331-74b07800-6c01-11e9-9d1e-441b3eaf65c9.jpeg)
  
  Top2 protein peak base percentage in the annotated groups (GSE16258)
  
