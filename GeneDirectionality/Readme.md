@@ -1,5 +1,7 @@
 This tool annotate the intergenic spaces of the whole genome based on the upstream and downstream gene directionality into convergent, divergent and codirectional groups. Then calculate the base percentage of given bed file into those groups. 
 
+Code: genedirectionality.R 
+
 Required R libraries:
 
 argparse
@@ -14,6 +16,8 @@ optional arguments:
   -sn SN      sample name comma seperated for tag
   -pr PR      Prefix tag for output file (Mandatory)
   -dir DIR    Output directory path (Mandatory)
+  
+  
   
   
   
