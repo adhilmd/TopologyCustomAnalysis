@@ -6,7 +6,7 @@ R Code:
 
 reptrans_collision.R
 
-Required Libraries: 
+Required R Libraries: 
 
 argparse, bedr, ggplot2
 
