@@ -10,6 +10,11 @@ Required R Libraries:
 
 argparse, bedr, ggplot2
 
+Input Files: 
+
+Genes bed annotation file, Replication Origin bed annotation file, User input bed files for collision analysis. 
+(Note: Example bed files are present in the libraryFiles folder)
+
 Input Parameters:
 
   -sc SC      bed file containing gene information with strand information, third column is strand information (Mandatory)
