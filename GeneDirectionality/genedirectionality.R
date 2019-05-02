@@ -49,7 +49,7 @@ slit <- function(sc,chr){
 }
 
 if (annotfile != "na"){
-sc = read.delim(file = annotfile, sep ="\t", h = F)
+sc = read.delim(file = annotfile, sep ="\t", h = F, skip = 1)
 sc$V1 = as.vector(sc$V1)
 chr = paste("chr",c(1:16),sep="")
 adf = slit(sc,chr)
