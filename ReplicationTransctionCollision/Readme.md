@@ -37,5 +37,7 @@ Output:
   ![Top2_RepTrans_Collision_Percentage](https://user-images.githubusercontent.com/18418058/57063346-35e2f680-6cc3-11e9-9701-b4e0b867864e.jpeg)
  
   Hmo1 protein peaks base percentage in the annotated collision genes
+  
+  ![Hmo1_RepTrans_Collision_Percentage](https://user-images.githubusercontent.com/18418058/57063391-5d39c380-6cc3-11e9-8dc2-2f3fa005a8ae.jpeg)
    
   
