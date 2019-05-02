@@ -90,6 +90,10 @@ Parameters:
  Output files:
  
  Output annotated peak file and pie chart showing the percentage of annotated peaks
- 
+
+Top2
+
 ![Top2_updown500_annotation](https://user-images.githubusercontent.com/18418058/57076967-1c55a500-6ceb-11e9-99f9-a6963e372c3d.jpeg)
+
+Hmo1
 ![Hmo1_updown500_annotation](https://user-images.githubusercontent.com/18418058/57076976-1f509580-6ceb-11e9-9be1-3a9bb5a09fb5.jpeg)
