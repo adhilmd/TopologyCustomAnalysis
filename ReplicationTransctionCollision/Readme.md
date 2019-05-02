@@ -8,9 +8,15 @@ Required Libraries: argparse, bedr, ggplot2
 
 Input Parameters:
   -sc SC      bed file containing gene information with strand information, third column is strand information (Mandatory)
+  
   -rep REP    Replication Origin bed file, if not provided then -arep file should be given
+  
   -arep AREP  Annotated Replication Origin bed file, if not provided then -rep should be provided
+  
   -bc BC      comma seperated bed sample file path (Mandatory)
+  
   -sn SN      sample name comma seperated for collisiontype (Mandatory)
+  
   -pr PR      Prefix collisiontype for output file (Mandatory)
+  
   -dir DIR    Output directory path (Mandatory)
