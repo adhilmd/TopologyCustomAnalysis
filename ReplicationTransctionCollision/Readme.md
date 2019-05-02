@@ -30,7 +30,11 @@ Output:
 
   Replication Transcription Collision Gene Percentage for different distances (250b, 500b, 1kb, 2kb, 5kb, 10kb)
   
+  ![ReplicationTranscriptionCollision](https://user-images.githubusercontent.com/18418058/57063280-0633ee80-6cc3-11e9-916b-3374114c8483.jpeg)
+  
   Top2 protein peaks base percentage in the annotated collision genes 
+  
+  
   
   Hmo1 protein peaks base percentage in the annotated collision genes
   
