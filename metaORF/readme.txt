@@ -77,3 +77,14 @@ Parameters:
   -ma MAIN     Main Title (Mandatory)
   
   -dir OUTDIR  Output directory path (Mandatory)
+  
+
+Output Files:
+
+MetaORF Gene Count plot where the y axis contains the average number of genes containing the peaks across the upstream, ORF and downstream
+
+![MetaFeature_Count_Top2Hmo1](https://user-images.githubusercontent.com/18418058/57066718-41d3b600-6ccd-11e9-9801-8b1fefc46d33.jpeg)
+
+MetaORF Gene Intensity plot where the y axis contains the average intensity across the upstream, ORF and downstream
+
+![MetaFeature_Score_Top2Hmo1](https://user-images.githubusercontent.com/18418058/57066719-41d3b600-6ccd-11e9-9af5-18f3caf788c1.jpeg)
