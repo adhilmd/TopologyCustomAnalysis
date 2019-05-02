@@ -88,3 +88,5 @@ MetaORF Gene Count plot where the y axis contains the average number of genes co
 MetaORF Gene Intensity plot where the y axis contains the average intensity across the upstream, ORF and downstream
 
 ![MetaFeature_Score_Top2Hmo1](https://user-images.githubusercontent.com/18418058/57066719-41d3b600-6ccd-11e9-9af5-18f3caf788c1.jpeg)
+
+Table: metaFeature.tsv containg all the averaged values (Intesity and Gene Count)
