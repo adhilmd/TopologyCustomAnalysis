@@ -1,5 +1,5 @@
 
-MetaORF or MetaFeature Analysis
+MetaFeature Analysis
 
 MetaORF or metaFeature to study the averaged enriched peak profile across all protein coding genes or specific set of features along with upstream and downstream profile. Python scriot is used for average profile calculation and Rscript is used for plotting.
 
