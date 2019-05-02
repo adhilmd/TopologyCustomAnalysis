@@ -1,5 +1,6 @@
 Peak analysis scripts
-(Note: All the library and sample input files are in the Libraryfiles folder)
+
+(Note: All the library and sample input files are in the libraryfiles folder. Input bed and bedgraph files are obtained from NCBI GEO: GSE16258)
 
 (i) Plotting user defined chromosome tracks using bedgraph files
 
