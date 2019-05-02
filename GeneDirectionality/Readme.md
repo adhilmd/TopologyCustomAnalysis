@@ -4,13 +4,26 @@ This tool annotate the intergenic spaces of the whole genome based on the upstre
 
 Code: genedirectionality.R 
 
-Required R libraries:
+Required R libraries: argparse, bedr, ggplot2
 
-argparse, bedr, ggplot2
+Input Files: Protein coding annotation file and bed files  
 
 Arguments:
-  -h, --help  show this help message and exit, -sc SC bed file containing gene information with strand information, third column is strand information, if not provided then -dc should be provided, -dc DC Directionality annotated file, if not provided then -sc should be provided, -bc BC comma seperated bed sample file path (Mandatory), -sn SN sample name comma seperated for tag (Mandatory), -pr PR  Prefix tag for output file (Mandatory), -dir DIR Output directory path (Mandatory)
+
+-sc SC bed file containing gene information with strand information, third column is strand information, if not provided then -dc should be provided
+
+-dc DC Directionality annotated file, if not provided then -sc should be provided
+
+-bc BC comma seperated bed sample file path (Mandatory)
+
+-sn SN sample name comma seperated for tag (Mandatory)
+
+-pr PR  Prefix tag for output file (Mandatory)
+
+-dir DIR Output directory path (Mandatory)
   
+Output files:
+
  Intergenic spaces of the whole genome based on the gene directionality in yeast (saccer2011)
  
  ![Genearrangement](https://user-images.githubusercontent.com/18418058/57011196-dc19f800-6c00-11e9-8d12-952a97d13fbb.jpeg)
