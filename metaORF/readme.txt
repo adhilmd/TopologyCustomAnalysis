@@ -15,10 +15,10 @@ argparse, plyr, ggplot2, gridExtra
 
 Input files:
 
-(i) protein coding bed annotation file, (ii) user peak bed and bedgraph graph files
+(i) protein coding bed annotation file, (ii) user peak bed and bedgraph file
 
 Steps:
-i) Run the metaFeature.py file to generate metaFeature.tsv which contains intensity average and gene density across the average bases.
+i) Run the metaFeature.py file using python3 to generate metaFeature.tsv, which contains intensity average and gene count across the averaged bases.
 
 Parameters:
 
@@ -59,7 +59,7 @@ Parameters:
                         outdir (Mandatory)
 
 
-ii) Plot with script plot_metaFeature.R using the metaFeature.tsv files.
+ii) Plot the averaged values (metaFeature.tsv) using plot_metaFeature.R.
 
 Parameters:
 
