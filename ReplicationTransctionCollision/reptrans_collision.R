@@ -56,7 +56,8 @@ strandfunc = function(sc,findata){
   return (findata1)
 }
 
-sc = read.delim(file = annotfile,sep="\t",h=F)
+sc = read.delim(file = annotfile,sep="\t",h=F,skip=1)
+sc = sc[,c(1:7)]
 colnames(sc) = c("gchr","gstart","gend","gstrand","gname","gsymbol","type")
 
 dlength = c(250,500,1000,2000,5000,10000)
