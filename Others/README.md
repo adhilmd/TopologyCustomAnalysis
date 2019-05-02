@@ -35,6 +35,8 @@ Parameters:
  Output file:
  
  Plot containing the peak bar and peak values with gene annotation
+ 
+ ![Top2Hmo1_genes_track](https://user-images.githubusercontent.com/18418058/57076938-0f38b600-6ceb-11e9-909d-3b0d9bad3e51.jpeg)
 
 (ii) Correlation analysis between two bed files based on the feature overlap (feature can be Genes, ReplicationOrigin and telomeres etc)
 
@@ -62,6 +64,9 @@ Parameters:
  
  File contating the statistical measures (correlation value, pvalue) and correlation plot
  
+ ![Top2Hmo1_correlation](https://user-images.githubusercontent.com/18418058/57076941-12cc3d00-6ceb-11e9-9c2c-ba60a3e208b2.jpeg)
+
+ 
  (iii) Peak annotation for given feature set
  
  Code: proteincoding_annotation.R
@@ -86,3 +91,5 @@ Parameters:
  
  Output annotated peak file and pie chart showing the percentage of annotated peaks
  
+![Top2_updown500_annotation](https://user-images.githubusercontent.com/18418058/57076967-1c55a500-6ceb-11e9-99f9-a6963e372c3d.jpeg)
+![Hmo1_updown500_annotation](https://user-images.githubusercontent.com/18418058/57076976-1f509580-6ceb-11e9-9be1-3a9bb5a09fb5.jpeg)
