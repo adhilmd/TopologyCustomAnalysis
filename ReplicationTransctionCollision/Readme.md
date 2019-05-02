@@ -32,10 +32,10 @@ Output:
   
   ![ReplicationTranscriptionCollision](https://user-images.githubusercontent.com/18418058/57063280-0633ee80-6cc3-11e9-916b-3374114c8483.jpeg)
   
-  Top2 protein peaks base percentage in the annotated collision genes 
+  Top2 protein peaks base percentage in the annotated collision genes
   
-  
-  
+  ![Top2_RepTrans_Collision_Percentage](https://user-images.githubusercontent.com/18418058/57063346-35e2f680-6cc3-11e9-9701-b4e0b867864e.jpeg)
+ 
   Hmo1 protein peaks base percentage in the annotated collision genes
-  
+   
   
