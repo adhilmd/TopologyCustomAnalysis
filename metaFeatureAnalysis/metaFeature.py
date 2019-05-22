@@ -23,7 +23,7 @@ def argparser():
     parser.add_argument('-flb','--flankingbases', type=int, dest='flankingbases', help="Total flanking bases. (Required only if -fl is yes)", action = 'store', default = 0)
     parser.add_argument('-sm','--samplename', type=str, dest='samplename', help="Sample name", action = 'store', required = True)
     parser.add_argument('-sb','--subtype', type=str, dest='subtype', help="Subtype column name from feature file, where subtype is used for aggregation (Default=None)", action = 'store', default=None)
-    parser.add_argument('-t','--multithreads', type=int, dest='procs', help="Comma seperated output prefix (Mandatory). Same number of items as -f argument (Default=2)", action = 'store', default=2)
+    parser.add_argument('-t','--multithreads', type=int, dest='procs', help="Number of threads (Default=2)", action = 'store', default=2)
     parser.add_argument('-o','--outdir', type=str, dest='outdir', help="outdir (Mandatory)", action = 'store', required = True)
     args = parser.parse_args()
     return(args)
