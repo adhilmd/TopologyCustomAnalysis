@@ -46,6 +46,9 @@ Parameters:
   -flb FLANKINGBASES, --flankingbases FLANKINGBASES
                         Total flanking bases. (Required only if -fl is yes)
   
+  -avgt {median,mean}, --avgtype {median,mean}
+                        Ratio averaging type mean or median (Default = median)
+  
   -sm SAMPLENAME, --samplename SAMPLENAME
                         Sample name
   
@@ -69,7 +72,16 @@ Parameters:
   
   -tg TAGS     semi colan (;) seperated within the metaorf txt file and comma (,) seperated between the metaorf files
                (Example:SampleASubtype1;SampleASubtype2,SampleBSubtype1;SampleBSubtype2), If not provided all the subtypes will be used
-  
+ 
+  -rtype {l2fc,ratio}  ratio type l2fc=log2(IP/Input) or just
+                       ratio=(IP/Input), if l2fc then exponential function is
+                       used to convert all values to positive scale (Default =
+                       l2fc)
+  -sm {yes,no}         smoothing the curve using geom_smooth function
+                       (Default=yes)
+  -cf {yes,no}         95 percent confidence interval to be plotted
+                       (Default=no)
+                       
   -nb NBASES   Number of bases used for merging (Mandatory)
   
   -sf STAG     suffix tag for plot (Mandatory)
