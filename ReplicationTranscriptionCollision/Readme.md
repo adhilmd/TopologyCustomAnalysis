@@ -49,4 +49,4 @@ Output:
    
    (i) allgene_reptranscollision.txt, ReplicationTranscriptionCollision_aggregate.txt contains the gene annotation with the collision type
    
-   (ii) RepTrans_Collision_allgenes.txt, RepTrans_Collision_aggregate.txt contains the peak (User bed file) base percentage overlap in each collision type
+   (ii) ReplicationTranscriptionCollision_aggregate.txt contains the peak (User bed file) base percentage overlap in each collision type
