@@ -43,7 +43,7 @@ Output:
  
   Hmo1 protein peaks base percentage in the annotated collision genes (Data from GEO: GSE16258)
   
-
+![Hmo1_RepTrans_Collision_Percentage](https://user-images.githubusercontent.com/18418058/67691530-09bcdf80-f99f-11e9-833c-86e225bdf92f.jpeg)
    
    Text files: 
    
