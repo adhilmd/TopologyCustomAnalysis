@@ -37,20 +37,24 @@ if ((repfile == "na")&(arepfile == "na")){
  q()
 }  
 
-strandfunc = function(sc,findata){
+strandfunc = function(sc,findata,all){
   sc$gid = paste(sc$gchr,":",sc$gstart,"-",sc$gend,sep="")
   scv = sc$gid
   scv.sort = bedr.sort.region(scv)
   findata$pid = paste(findata$chr,":",findata$start,"-",findata$end,sep="")
   dtv = findata$pid
   dtv.sort = bedr.sort.region(dtv)
-  dtv.int <- bedr(input = list(a = dtv.sort, b = scv.sort), engine="/usr/bin/bedtools", method="intersect",params ="-wo -sorted")
+  dtv.int <- bedr(input = list(a = dtv.sort, b = scv.sort), engine="bedtools", method="intersect",params ="-wo -sorted")
   #dtv.int = dtv.int[-which(dtv.int$V5 == "-1"),]
   dtv.int$gid = paste(dtv.int$V4,":",dtv.int$V5,"-",dtv.int$V6,sep="")
   dfin = dtv.int[,c(1,6,5)]
   colnames(dfin) = c("pid","gid","Overlap")
   findata1 = merge(findata,dfin,by=c("pid"))
+  if (all == "yes"){
+  findata1 = merge(findata1,sc,by=c("gid"),all=TRUE)
+  } else {
   findata1 = merge(findata1,sc,by=c("gid"))
+  }
   findata1$origid = as.vector(findata1$origid)
   findata1$firing = as.vector(findata1$firing)
   return (findata1)
@@ -73,7 +77,8 @@ tb = data.frame(chr = reporig$chromosome, start = reporig$center-dlength[i], end
 tb2 = data.frame(chr = reporig$chromosome, start = reporig$center+1, end = reporig$center+dlength[i], origid = reporig$originid, firing = reporig$firing, typeo="r")
 tbx = rbind(tb,tb2)
 tbx$start[which(tbx$start <= 0)] = 0
-tbnp = strandfunc(sc,tbx)
+tbnp = strandfunc(sc,tbx,all="no")
+tbnp[is.na(tbnp)] = 0
 tbnp$collision = "crt"
 tbnp$typeo = as.vector(tbnp$typeo)
 tbnp$gstrand = as.vector(tbnp$gstrand)
@@ -117,38 +122,44 @@ alldata = read.delim(file = arepfile,sep="\t",h=F,skip=1)
 for (i in 1:length(sbdg)){
   findata = read.delim(file = sbdg[i],sep= "\t",h=F)
   colnames(findata)=c("chr","start","end","width","score","summit","peakid")
-  tbx = strandfunc(alldata,findata)
-  tbx$Overlap = as.numeric(tbx$Overlap)
-  tbx$gwidth = tbx$gend - tbx$gstart
-  tbx$Overlap = as.numeric(tbx$Overlap)
-  tbx = unique(tbx)
-  tbx$sample = stags[i]
-  atbx = aggregate(Overlap ~ gname+gwidth+DistanceGroup+collisiontype+collision, tbx, sum)
-  gsum = aggregate(gwidth ~ DistanceGroup+collisiontype+collision, atbx, sum)
-  osum = aggregate(Overlap ~ DistanceGroup+collisiontype+collision, atbx, sum)
-  fdat = merge(osum, gsum, by=c("collision"))
-  fdat$perc = (fdat$Overlap/fdat$gwidth)*100
-  fdat$sample = stags[i]
-  fdat = fdat[,c(2,3,4,7,8)]
-  colnames(fdat) = c("Distance", "Collision", "Overlap", "GeneBase", "Percentage")
-  fdat$Distance=factor(fdat$Distance,levels=dlength)
+  fdata = data.frame()
+  for (l in dlength){
+    datan = alldata[alldata$DistanceGroup == l,]
+    tbx = strandfunc(datan,findata,all="yes")
+    tbx[is.na(tbx$Overlap),"Overlap"] = 0
+    tbx$Overlap = as.numeric(tbx$Overlap)
+    tbx$gwidth = tbx$gend - tbx$gstart
+    tbx$Overlap = as.numeric(tbx$Overlap)
+    tbx = unique(tbx)
+    tbx$sample = stags[i]
+    atbx = aggregate(Overlap ~ gname+gwidth+DistanceGroup+collisiontype+collision, tbx, sum)
+    gsum = aggregate(gwidth ~ DistanceGroup+collisiontype+collision, atbx, sum)
+    osum = aggregate(Overlap ~ DistanceGroup+collisiontype+collision, atbx, sum)
+    fdat = merge(osum, gsum, by=c("collision"))
+    fdat$perc = (fdat$Overlap/fdat$gwidth)*100
+    fdat$sample = stags[i]
+    fdat = fdat[,c(2,3,4,7,8)]
+    colnames(fdat) = c("Distance", "Collision", "Overlap", "GeneBase", "Percentage")
+    fdata = rbind(fdat,fdata)
+  }
+  fdata$Distance=factor(fdata$Distance,levels=dlength)
   yname = paste(stags[i],"Percentage of peak base coverage", sep=" ")
-  p <- ggplot(data=fdat, aes(x=Distance, y=Percentage, fill=Collision)) + geom_bar(stat="identity", position=position_dodge()) + xlab("Replication Origin to Transcript Collision Distance") + ylab(yname)
+  p <- ggplot(data=fdata, aes(x=Distance, y=Percentage, fill=Collision)) + geom_bar(stat="identity", position=position_dodge()) + xlab("Replication Origin to Transcript Collision Distance") + ylab(yname)
   fname = paste(outdir,"/",stags[i],"_RepTrans_Collision_Percentage.jpeg",sep="")
   ggsave(p, file = fname, height = 6, width = 8, dpi = 300)
-  fdat$sample = stags[i]
+  fdata$sample = stags[i]
   if (i == 1){
   alltbx = tbx
-  allfdat = fdat	
+  allfdat = fdata	
   }else{
   alltbx = rbind(alltbx, tbx)
-  allfdat = rbind(allfdat, fdat)
+  allfdat = rbind(allfdat, fdata)
   }
 }
 alltbx = alltbx[,c(3:7,10,12:14,16,17,20)]
 colnames(alltbx)[7:9] = c("genestart","geneend","geneID")
 fname = paste(outdir,"/",pref,"_RepTrans_Collision_allgenes.txt",sep="")
-write.table(file = fname,alltbx,sep="\t",row.names=FALSE,col.names=TRUE,quote=FALSE)
+write.table(file = fname,alltbx[,c(9,10,11,7,8,1:6,12)],sep="\t",row.names=FALSE,col.names=TRUE,quote=FALSE)
 fname = paste(outdir,"/",pref,"_RepTrans_Collision_aggregate.txt",sep="")
 write.table(file = fname,allfdat,sep="\t",row.names=FALSE,col.names=TRUE,quote=FALSE)
 
