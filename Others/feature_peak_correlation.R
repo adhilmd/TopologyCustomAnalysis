@@ -45,7 +45,7 @@ mefunc = function(sc,findata){
   findata$pid = paste(findata$chr,":",findata$start,"-",findata$end,sep="")
   dtv = findata$pid
   dtv.sort = bedr.sort.region(dtv)
-  dtv.int <- bedr(input = list(a = dtv.sort, b = scv.sort), engine="/lustre/bioinfo/bin/bedtools", method="intersect",params ="-wo -sorted")
+  dtv.int <- bedr(input = list(a = dtv.sort, b = scv.sort), engine="bedtools", method="intersect",params ="-wo -sorted")
   #dtv.int = dtv.int[-which(dtv.int$V5 == "-1"),]
   dtv.int$gid = paste(dtv.int$V4,":",dtv.int$V5,"-",dtv.int$V6,sep="")
   dfin = dtv.int[,c(1,6,5)]
