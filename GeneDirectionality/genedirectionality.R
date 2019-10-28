@@ -122,12 +122,12 @@ mefunc = function(sc,findata){
   findata$pid = paste(findata$chromosome,":",findata$start,"-",findata$end,sep="")
   dtv = findata$pid
   dtv.sort = bedr.sort.region(dtv)
-  dtv.int <- bedr(input = list(a = dtv.sort, b = scv.sort), engine="/usr/bin/bedtools", method="intersect",params ="-wo -sorted")
+  dtv.int <- bedr(input = list(a = dtv.sort, b = scv.sort), engine="bedtools", method="intersect",params ="-wo -sorted")
   dtv.int$gid = paste(dtv.int$V4,":",dtv.int$V5,"-",dtv.int$V6,sep="")
   dfin = dtv.int[,c(1,6,5)]
   colnames(dfin) = c("pid","gid","Overlap")
   findata1 = merge(findata,dfin,by=c("pid"))
-  findata1 = merge(findata1,sc,by=c("gid"))
+  findata1 = merge(findata1,sc,by=c("gid"),all=TRUE)
   findata1$fgeneid = as.vector(findata1$fgeneid)
   findata1$tag = as.vector(findata1$tag)
   findata1$Overlap = as.numeric(as.vector(findata1$Overlap))
@@ -139,6 +139,7 @@ for (f in 1:length(fpath)){
 findata = read.delim(file = fpath[f],sep= "\t",h=F)
 colnames(findata) = c("chromosome","start","end","length","score","summit","peakid")
 findata1 = mefunc(directiondat,findata) 
+findata1[is.na(findata1$Overlap),"Overlap"] = 0
 findata1 = findata1[,c(14,20,10,21)]
 odissum = aggregate(distance ~ tag+cdis, directiondat, sum)
 overlapsum = aggregate(Overlap ~ tag+cdis, findata1, sum)
