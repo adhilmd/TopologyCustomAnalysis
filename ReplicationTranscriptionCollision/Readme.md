@@ -1,6 +1,6 @@
 Replication-Transcription Collision Analysis
 
-This tool annotate the genes for collision (headon or codirectional) type based on the gene strand orientation and the nearby replication origin (present in either upstream or downstream of the gene). The center point is calculated for the replication origin and the nearby genes with varying distance (250b, 500b, 1kb, 2kb, 5kb, 10kb) from the origin center are used for the annotation
+This tool annotate the genes for collision (headon or codirectional) type based on the gene strand orientation and the nearby replication origin (present in either upstream or downstream of the gene). The center point is calculated for the replication origin and the nearby genes with varying distance (250b, 500b, 1kb, 2kb, 5kb, 10kb) are used for the annotation
 
 R Code: 
 
