@@ -30,11 +30,8 @@ Output files:
   
  Hmo1 protein peak base percentage in the annotated groups convergent, divergent and codirectional± (GSE16258)
  
- ![Hmo1_directionalityIntergenicspaces](https://user-images.githubusercontent.com/18418058/57011331-74b07800-6c01-11e9-9d1e-441b3eaf65c9.jpeg)
  
  Top2 protein peak base percentage in the annotated groups convergent, divergent and codirectional± (GSE16258)
  
- ![Top2_directionalityIntergenicspaces](https://user-images.githubusercontent.com/18418058/57011421-d7097880-6c01-11e9-956a-f144f1f67aa9.jpeg)
-
   
 
