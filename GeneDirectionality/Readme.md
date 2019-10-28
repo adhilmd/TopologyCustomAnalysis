@@ -34,5 +34,5 @@ Output files:
  
  Top2 protein peak base percentage in the annotated groups convergent, divergent and codirectional± (GSE16258)
  
-  
+  ![Top2_directionalityIntergenicspaces](https://user-images.githubusercontent.com/18418058/67693771-92894a80-f9a2-11e9-8e43-5b96d7240306.jpeg)
 
