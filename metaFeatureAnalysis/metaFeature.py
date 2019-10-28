@@ -6,8 +6,6 @@ Created on Fri Mar 22 11:20:41 2019
 @author: amohamme
 """
 
-#python3 metaFeature.py -bdg "/lustre/home/amohamme/data/Chip/NegSupercoiling/R1323/Outputf/DataProcessing/bed_graphfiles/proc_R1323_Top1_S-28_IP-A.bdg" -bed "/lustre/home/amohamme/data/Chip/NegSupercoiling/R1323/Outputf/DataProcessing/bed_graphfiles/proc_R1323_Top1_S-28_IP-A.bed" -ft "/lustre/home/amohamme/data/AnnotationFiles/saccer2011/Sc_proteincoding_header.txt" -st "yes" -stn "strand" -bs "1000" -fl "yes" -flb "500" -sm "Top1Neg" -t "16" -o "/storage/home/amohamme/My_Tools/metaFeature/"
-
 import argparse
 
 def argparser():
