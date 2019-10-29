@@ -14,7 +14,7 @@ parser <- ArgumentParser()
 parser <- ArgumentParser(description='This script is for plotting metaORF values')
 parser$add_argument("-mf", dest="inmet", help="Comma seperated text files (Mandatory)", required = TRUE)
 parser$add_argument("-tg", dest="tags", help="semi colan (;) seperated within the metaorf txt file and comma (,) seperated between the metaorf files (Example:SampleASubtype1;SampleASubtype2,SampleBSubtype1;SampleBSubtype2), If not provided all the subtypes will be used",  default="None")
-parser$add_argument("-rtype", dest="rtype", help="ratio type l2fc=log2(IP/Input) or just ratio=(IP/Input), if l2fc then exponential function is used to convert all values to positive scale (Default = l2fc)", default="l2fc", choices=c("l2fc","ratio"))
+parser$add_argument("-rtype", dest="rtype", help="ratio type logfc=log(IP/Input) or just ratio=(IP/Input), if logfc then exponential function is used to convert all values to positive scale (Default = logfc)", default="logfc", choices=c("logfc","ratio"))
 parser$add_argument("-sm", dest="sm", help="smoothing the curve using geom_smooth function (Default=yes)", default="yes",choices=c("yes","no"))
 parser$add_argument("-cf", dest="cf", help="95 percent confidence interval to be plotted (Default=no)", default="no",choices=c("yes","no"))
 parser$add_argument("-nb", dest="nbases", help="Number of bases used for merging (Mandatory)", required = TRUE)
@@ -85,7 +85,7 @@ metaorf$likelihood = as.numeric(metaorf$likelihood)
 metaorf$CF_low = as.numeric(metaorf$CF_low)
 metaorf$CF_high = as.numeric(metaorf$CF_high)
 
-if (rtype == "l2fc"){
+if (rtype == "logfc"){
 metaorf$likelihood = exp(as.numeric(metaorf$likelihood))
 metaorf$CF_low = exp(as.numeric(metaorf$CF_low))
 metaorf$CF_high = exp(as.numeric(metaorf$CF_high))
